@@ -1,0 +1,125 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    color: #333;
+    }
+    
+    h1, h2 {
+    margin: 0;
+    }
+    
+    /* Header */
+    header {
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 0;
+    text-align: center;
+    }
+    
+    header h1 {
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 700; 
+    font-size: 2.5rem;
+    color: black
+    ;
+    }
+    
+    /* Main content */
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Left column */
+    .left-column {
+    flex: 2;
+    padding: 1rem;
+    }
+    
+    .left-column ul {
+    list-style-type: none;
+    padding: 0;
+    }
+    
+    .left-column li {
+    padding: 0.5rem 0;
+    }
+    
+    /* Right column */
+    .right-column {
+    flex: 9;
+    padding: 1rem;
+    background-color: #f3f3f3;
+    }
+    
+    .attraction {
+    margin-bottom: 2rem;
+    }
+    
+    .attraction p {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1rem;
+    max-width: 70%;
+    }
+    
+    .attraction img {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    max-height: 150px;
+    object-fit: cover;
+    }
+    
+    /* Footer */
+    footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    }
+    
+    /* Responsive Design */
+    @media screen and (min-width: 768px) {
+        .content {
+            flex-direction: row;
+        }
+    
+        .left-column, .right-column {
+            padding: 1rem;
+        }
+    
+        .attraction img {
+            width: 25%;
+            max-height: 150px;
+        }
+    
+        .attraction p {
+            margin-right: 1rem;
+            max-width: 70%;
+        }
+    }
+
+/* Voeg een counter toe voor de feitjes */
+.left-column ul {
+    list-style-type: none;
+    padding: 0;
+    counter-reset: feitjes; 
+}
+
+.left-column li {
+    padding: 0.5rem 0;
+    position: relative; 
+}
+
+.left-column li::before {
+    content: counter(feitjes); 
+    counter-increment: feitjes; 
+    font-family: 'FontAwesome'; 
+    font-size: 2rem; 
+    color: lightblue; 
+    position: absolute; 
+    left: -1rem; 
+}
